@@ -1,0 +1,63 @@
+event_id,reference_id,track_id,direction,seconds,status,description
+1,2,7,ltr,1.52,matched,Front companion in light top
+2,1,9,ltr,1.52,matched,Front person in blue outerwear with patterned shopping bag
+3,3,6,ltr,1.68,matched,Rear person in dark jacket and gray trousers present at start
+4,4,5,ltr,3.6,matched,Rear person in black short sleeves and white trousers
+5,5,8,ltr,4.24,matched,Person in navy jacket with backpack
+6,6,10,ltr,7.36,matched,Rear pair first person in dark outerwear
+7,7,11,ltr,7.52,matched,Rear pair companion with yellow bag
+8,8,14,ltr,9.52,matched,Rear person using phone wearing blue jeans
+9,9,24,ltr,11.52,matched,Front person in white sweatshirt using phone
+10,10,16,ltr,11.68,matched,Person in long dark outerwear and light scarf
+11,11,25,ltr,13.44,matched,Person in dark cap with backpack
+12,17,36,rtl,13.52,matched,Rear person in white top and dark trousers walking left
+13,12,30,ltr,14.8,matched,Rear person carrying blue tote
+14,13,31,ltr,15.52,matched,Front person in white shirt and black backpack
+15,14,20,ltr,16.32,matched,Rear person in long black skirt and white sleeves
+16,18,44,rtl,17.28,matched,Front person in dark top and blue jeans carrying light bag
+17,15,34,ltr,17.52,matched,Person in navy polo shirt
+18,16,39,ltr,19.28,matched,Person in dark shorts or short skirt and boots
+19,19,51,rtl,19.36,matched,Front person in light cardigan and dark skirt
+20,20,46,rtl,20.0,matched,Front person in denim jacket with white socks
+21,22,54,ltr,21.04,matched,Blue and white top with large backpack alongside pink sleeves
+22,21,55,ltr,21.36,matched,Pink long sleeves and dark skirt walking with blue-white top
+23,52,45,rtl,21.6,matched,Rear cream outfit walking left
+24,23,59,ltr,24.0,matched,Rear navy sweater and dark trousers
+25,24,57,ltr,24.24,matched,Rear checked shirt alongside navy sweater
+26,25,60,ltr,26.88,matched,Black hoodie and white trousers
+27,26,71,ltr,28.32,matched,Front light gray top with backpack
+28,27,73,ltr,28.32,matched,Front blue and white top with backpack alongside gray top
+29,59,69,ltr,28.64,matched,Rear black top and white trousers using phone
+30,28,72,ltr,30.96,matched,Navy sweater and pale blue jeans
+31,54,77,rtl,33.6,matched,Rear black top and pink-white shoulder bag
+32,58,82,ltr,37.92,matched,Rear white collared long shirt and dark trousers
+33,29,78,ltr,39.52,matched,Tan outfit and patterned brimmed hat
+34,55,80,rtl,39.52,matched,Black top long tan skirt and black backpack
+35,30,86,ltr,40.72,matched,White collared shirt and dark trousers with black backpack
+36,56,87,rtl,42.24,matched,Blue bucket hat and dark loose outfit
+37,31,91,ltr,42.88,matched,Black hoodie and pale blue jeans entering around 38s
+38,57,93,rtl,44.08,matched,Rear light sleeves and dark long skirt with reddish hair
+39,32,92,ltr,44.72,matched,White top dark trousers and light blue draped overshirt
+40,37,97,rtl,45.04,matched,Rear gray jacket and light backpack walking left
+41,34,94,ltr,45.52,matched,White blouse and long beige skirt
+42,33,99,ltr,45.76,matched,Navy striped track jacket and dark trousers
+43,35,102,ltr,45.92,matched,Navy knit top light sleeves and beige trousers
+44,36,96,ltr,46.08,matched,Black jacket blue jeans and white crossbody pouch
+45,38,101,ltr,47.6,matched,"Rear group: front person in black short sleeves and blue jeans, hand near chest"
+46,62,100,ltr,47.68,matched,Rear group: rear brown-haired person in black long sleeves and pale blue jeans
+47,40,110,ltr,47.84,matched,Tan baseball cap and light gray printed hoodie
+48,39,113,ltr,48.32,matched,Rear black short sleeves and striped dark track pants
+49,41,115,ltr,48.88,matched,Front gray jacket beige trousers and black backpack
+50,42,111,ltr,49.04,matched,Middle black jacket and gray trousers with black backpack
+51,43,109,ltr,49.52,matched,Middle long-haired white blouse and brown shorts
+52,44,114,ltr,50.88,matched,Printed dark long sleeves white trousers and green backpack
+53,45,117,ltr,52.0,matched,Rear white long overshirt with dark shoulder bag
+54,46,121,ltr,53.36,matched,Long-haired person in all black
+55,47,123,ltr,54.4,matched,Front white top dark trousers and black backpack
+56,49,130,ltr,54.48,matched,Very front dark top with green patterned backpack
+57,48,126,ltr,54.64,matched,Front cream top and black backpack alongside white top
+58,50,120,ltr,56.48,matched,Rear long-haired white sweatshirt and gray trousers
+59,51,131,ltr,58.48,matched,Rear graphic black T-shirt and pale blue jeans
+60,60,138,rtl,59.76,matched,Rear black and white checked shirt walking left
+,53,,rtl,36.9,excluded_unverifiable_border,Very front dark hooded person walking left
+,61,,ltr,28.2,excluded_unverifiable_border,Head-only foreground person near camera

@@ -1,0 +1,12 @@
+{
+  "unit_tests": 13,
+  "unit_tests_passed": true,
+  "mac_mps_tested": false,
+  "mac_performance_measured": false,
+  "original_files_checked": 60,
+  "original_files_changed": [],
+  "model_sha256": {
+    "yolo11m-pose.pt": "29b17eaf3a3117cbea906090dbedf9159f7c6a49db58ec8b99ed2dfde1cf6eb2",
+    "yolo11s.pt": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5"
+  }
+}

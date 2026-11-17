@@ -1,0 +1,17 @@
+event_id,reference_id,direction,seconds,status,description
+1,1,rtl,1.76,matched,Dark top and patterned backpack visible at clip start
+2,2,rtl,6.32,matched,Light gray top with dark backpack and white tote
+3,3,rtl,9.6,matched,Light hoodie with dark backpack and beige shorts
+4,4,rtl,14.64,matched,Dark outfit with backpack
+5,5,rtl,20.08,matched,Dark-clothed companion walking ahead of pale umbrella
+6,6,rtl,20.64,matched,Person under pale umbrella
+7,7,ltr,20.8,matched,Black top and checked long skirt
+8,8,rtl,26.24,matched,White top and dark trousers with shoulder bag
+9,9,rtl,27.12,matched,Red top with backpack
+10,10,rtl,33.68,matched,Black top and beige trousers with backpack
+11,11,rtl,34.0,matched,Light blue striped top with light tote
+12,12,rtl,35.52,matched,Dark gray long sleeves
+13,13,rtl,36.64,matched,White top with large dark backpack
+14,14,rtl,41.44,matched,Dark top beige trousers and blue backpack
+15,15,ltr,48.88,matched,Person under black umbrella
+16,16,ltr,57.68,matched,Dark top and trousers using phone

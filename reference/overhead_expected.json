@@ -1,0 +1,178 @@
+[
+  {
+    "event_id": "1",
+    "track_id": "2",
+    "direction": "rtl",
+    "frame": "44",
+    "seconds": "1.76",
+    "x": "958.9",
+    "y": "1118.4",
+    "reference_id": "1",
+    "description": "Dark top and patterned backpack visible at clip start"
+  },
+  {
+    "event_id": "2",
+    "track_id": "10",
+    "direction": "rtl",
+    "frame": "158",
+    "seconds": "6.32",
+    "x": "959.2",
+    "y": "1288.7",
+    "reference_id": "2",
+    "description": "Light gray top with dark backpack and white tote"
+  },
+  {
+    "event_id": "3",
+    "track_id": "13",
+    "direction": "rtl",
+    "frame": "240",
+    "seconds": "9.6",
+    "x": "979.3",
+    "y": "1357.6",
+    "reference_id": "3",
+    "description": "Light hoodie with dark backpack and beige shorts"
+  },
+  {
+    "event_id": "4",
+    "track_id": "18",
+    "direction": "rtl",
+    "frame": "366",
+    "seconds": "14.64",
+    "x": "956.8",
+    "y": "945.2",
+    "reference_id": "4",
+    "description": "Dark outfit with backpack"
+  },
+  {
+    "event_id": "5",
+    "track_id": "20",
+    "direction": "rtl",
+    "frame": "502",
+    "seconds": "20.08",
+    "x": "987.8",
+    "y": "1395.4",
+    "reference_id": "5",
+    "description": "Dark-clothed companion walking ahead of pale umbrella"
+  },
+  {
+    "event_id": "6",
+    "track_id": "24",
+    "direction": "rtl",
+    "frame": "516",
+    "seconds": "20.64",
+    "x": "976.3",
+    "y": "1121.8",
+    "reference_id": "6",
+    "description": "Person under pale umbrella"
+  },
+  {
+    "event_id": "7",
+    "track_id": "26",
+    "direction": "ltr",
+    "frame": "520",
+    "seconds": "20.8",
+    "x": "1103.6",
+    "y": "705.7",
+    "reference_id": "7",
+    "description": "Black top and checked long skirt"
+  },
+  {
+    "event_id": "8",
+    "track_id": "31",
+    "direction": "rtl",
+    "frame": "656",
+    "seconds": "26.24",
+    "x": "969.3",
+    "y": "1035.8",
+    "reference_id": "8",
+    "description": "White top and dark trousers with shoulder bag"
+  },
+  {
+    "event_id": "9",
+    "track_id": "34",
+    "direction": "rtl",
+    "frame": "678",
+    "seconds": "27.12",
+    "x": "958.6",
+    "y": "1160.3",
+    "reference_id": "9",
+    "description": "Red top with backpack"
+  },
+  {
+    "event_id": "10",
+    "track_id": "43",
+    "direction": "rtl",
+    "frame": "842",
+    "seconds": "33.68",
+    "x": "978.2",
+    "y": "777.9",
+    "reference_id": "10",
+    "description": "Black top and beige trousers with backpack"
+  },
+  {
+    "event_id": "11",
+    "track_id": "44",
+    "direction": "rtl",
+    "frame": "850",
+    "seconds": "34.0",
+    "x": "898.0",
+    "y": "1387.5",
+    "reference_id": "11",
+    "description": "Light blue striped top with light tote"
+  },
+  {
+    "event_id": "12",
+    "track_id": "45",
+    "direction": "rtl",
+    "frame": "888",
+    "seconds": "35.52",
+    "x": "964.0",
+    "y": "1236.2",
+    "reference_id": "12",
+    "description": "Dark gray long sleeves"
+  },
+  {
+    "event_id": "13",
+    "track_id": "48",
+    "direction": "rtl",
+    "frame": "916",
+    "seconds": "36.64",
+    "x": "961.8",
+    "y": "945.0",
+    "reference_id": "13",
+    "description": "White top with large dark backpack"
+  },
+  {
+    "event_id": "14",
+    "track_id": "51",
+    "direction": "rtl",
+    "frame": "1036",
+    "seconds": "41.44",
+    "x": "948.6",
+    "y": "956.1",
+    "reference_id": "14",
+    "description": "Dark top beige trousers and blue backpack"
+  },
+  {
+    "event_id": "15",
+    "track_id": "55",
+    "direction": "ltr",
+    "frame": "1222",
+    "seconds": "48.88",
+    "x": "1140.4",
+    "y": "752.2",
+    "reference_id": "15",
+    "description": "Person under black umbrella"
+  },
+  {
+    "event_id": "16",
+    "track_id": "58",
+    "direction": "ltr",
+    "frame": "1442",
+    "seconds": "57.68",
+    "x": "1129.9",
+    "y": "891.9",
+    "reference_id": "16",
+    "description": "Dark top and trousers using phone"
+  }
+]

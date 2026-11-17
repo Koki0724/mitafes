@@ -1,0 +1,10 @@
+{
+  "sources": [
+    "../counting_poc/validation_60s/glass_available_60s.mp4",
+    "../data/1219/ch1_20261106_121900-124148_vscode.mp4"
+  ],
+  "compared_observations": 750,
+  "identical_full_resolution_frames": 750,
+  "different_frames": [],
+  "seconds": 62.37751189991832
+}

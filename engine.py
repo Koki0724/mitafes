@@ -1,0 +1,96 @@
+"""Bounded-state adaptation of the frozen camera algorithms, independent of inference."""
+from collections import Counter,defaultdict,deque
+from pathlib import Path
+import sys
+
+sys.path.insert(0,str(Path(__file__).resolve().parent/'reference'))
+from camera_counter import (TemporalCounter,PoseAnchorTracker,make_tracker,objects,
+                            person_quality,inside,foot,umbrella_point,associate_umbrellas)
+from ultralytics.trackers.basetrack import BaseTrack
+
+
+class StreamingCounter:
+    def __init__(self,profile,width,height,fps,stride):
+        self.profile=profile;self.width=width;self.height=height;self.fps=fps;self.stride=stride
+        self.pose_mode=profile.get('tracker')=='pose_anchor'
+        self.people_tracker=PoseAnchorTracker(fps,profile) if self.pose_mode else make_tracker(fps/stride,profile)
+        self.umbrella_tracker=make_tracker(fps/stride,profile,umbrella=True)
+        self.people_counter=TemporalCounter(profile,width,fps)
+        self.umbrella_counter=TemporalCounter(profile,width,fps)
+        self.totals=Counter(ltr=0,rtl=0)
+        self.umbrella_total=0;self.umbrella_review_total=0;self.rejected=0
+        self.links=defaultdict(Counter);self.umbrella_last={}
+        self.recent_people=deque();self.pending_umbrellas=deque()
+        self.last_frame=-1
+
+    def update(self,item):
+        frame=item['index'];p=self.profile;w=self.width;h=self.height
+        if frame<=self.last_frame:raise ValueError('Frames must arrive once, in source order')
+        self.last_frame=frame
+        people_dets=[];points=[]
+        for i,d in enumerate(item['detections']):
+            if int(d[5])!=0 or not inside(foot(d[:4]),p,w,h):continue
+            if not person_quality(d[:4],p,w,h)[0]:self.rejected+=1;continue
+            people_dets.append(d)
+            if self.pose_mode:points.append(item['keypoints'][i])
+        umbrella_dets=[d for d in item['detections'] if int(d[5])==25 and inside(umbrella_point(d[:4],p),p,w,h)]
+        people=self.people_tracker.update(people_dets,points,frame) if self.pose_mode else objects(self.people_tracker,people_dets,(h,w))
+        people=[x for x in people if person_quality(x['xyxy'],p,w,h)[0]]
+        umbrellas=objects(self.umbrella_tracker,umbrella_dets,(h,w))
+        for person in people:
+            x,y=person.get('anchor',foot(person['xyxy']))
+            self.people_counter.update(person['id'],x,y,frame)
+        events=self.people_counter.events[:];self.people_counter.events.clear()
+        for event in events:
+            self.totals[event['direction']]+=1;event['event_id']=sum(self.totals.values())
+            self.recent_people.append(event)
+        for umbrella in umbrellas:
+            x,y=umbrella_point(umbrella['xyxy'],p)
+            self.umbrella_counter.update(umbrella['id'],x,y,frame)
+            self.umbrella_last[umbrella['id']]=frame
+        for event in self.umbrella_counter.events:
+            self.umbrella_total+=1;event['event_id']=self.umbrella_total;self.pending_umbrellas.append(event)
+        self.umbrella_counter.events.clear()
+        matches=associate_umbrellas(umbrellas,people,p)
+        for uid,pid,cost in matches:self.links[uid][pid]+=1
+        audits=self.audit(frame/self.fps)
+        # Ended track IDs cannot reconnect after the frozen tracker lifetime.
+        # Keep ample extra history, then retire states rather than accumulating hours.
+        if frame%max(1,round(self.fps))<self.stride:
+            cutoff=frame-round(self.fps*10)
+            for counter in [self.people_counter,self.umbrella_counter]:
+                counter.states={tid:s for tid,s in counter.states.items() if s['last_frame']>=cutoff}
+            for uid,last in list(self.umbrella_last.items()):
+                if last<cutoff:
+                    self.umbrella_last.pop(uid);self.links.pop(uid,None)
+            while self.recent_people and self.recent_people[0]['seconds']<frame/self.fps-5:
+                self.recent_people.popleft()
+        return dict(frame=frame,people=people,umbrellas=umbrellas,matches=matches),events,audits
+
+    def audit(self,seconds,final=False):
+        result=[];tol=self.profile['umbrella_event_tolerance_seconds']
+        while self.pending_umbrellas and (final or self.pending_umbrellas[0]['seconds']+tol<=seconds):
+            event=self.pending_umbrellas.popleft()
+            candidates={pid for pid,n in self.links[event['track_id']].items() if n>=2}
+            covered=[e['event_id'] for e in self.recent_people if e['track_id'] in candidates and e['direction']==event['direction'] and abs(e['seconds']-event['seconds'])<=tol]
+            status='person_observed' if len(covered)==1 else 'needs_review'
+            if status=='needs_review':self.umbrella_review_total+=1
+            result.append(dict(umbrella_event_id=event['event_id'],umbrella_track_id=event['track_id'],direction=event['direction'],seconds=event['seconds'],associated_person_event_ids=covered,status=status))
+        return result
+
+    def summary(self):
+        return dict(ltr=self.totals['ltr'],rtl=self.totals['rtl'],events=sum(self.totals.values()),
+                    umbrella_crossings=self.umbrella_total,umbrella_review_candidates=self.umbrella_review_total,
+                    rejected_observations=self.rejected,
+                    live_states=dict(people=len(self.people_counter.states),umbrellas=len(self.umbrella_counter.states),
+                                     recent_events=len(self.recent_people),umbrella_links=len(self.links)),
+                    pending_at_end=self.people_counter.pending(self.last_frame,self.stride+1))
+
+    def snapshot(self):
+        # ByteTrack's allocator is a class variable, outside the instance pickle.
+        return dict(engine=self,byte_track_id_counter=BaseTrack._count)
+
+    @staticmethod
+    def restore(snapshot):
+        BaseTrack._count=snapshot['byte_track_id_counter']
+        return snapshot['engine']

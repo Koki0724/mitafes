@@ -1,0 +1,53 @@
+# Python environments and generated files
+.venv/
+.venv-*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+._*
+Thumbs.db
+*.swp
+*.swo
+
+# Recordings, model weights and exports (download separately)
+data/
+recordings/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.m4v
+*.webm
+*.pt
+*.pth
+*.onnx
+*.engine
+*.mlmodel
+*.mlpackage/
+*.mlmodelc/
+
+# Runtime outputs; reference/ and tests/fixtures/ remain versioned
+runs/
+outputs/
+*.log
+*.sqlite
+*.sqlite-*
+*.db
+*.part

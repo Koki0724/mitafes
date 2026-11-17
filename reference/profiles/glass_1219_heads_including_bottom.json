@@ -1,0 +1,28 @@
+{
+  "name": "glass_heads_all",
+  "description": "Pose head-anchor tracking including people partially visible at the bottom edge",
+  "source": "validation_60s/glass_available_60s.mp4",
+  "line_x": 0.6,
+  "margin": 0.0125,
+  "roi_mode": "glass_ground",
+  "roi_polygon": null,
+  "tracker_lost_seconds": 2.2,
+  "counter_max_gap_seconds": 0.24,
+  "counter_stale_seconds": 2.2,
+  "umbrella_foot_offset": 1.2,
+  "umbrella_match_max_cost": 1.5,
+  "umbrella_match_margin": 0.25,
+  "umbrella_event_tolerance_seconds": 1.2,
+  "bottom_fragment_min_height_fraction": 0,
+  "bottom_edge_tolerance_fraction": 0.01,
+  "detector_crop": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "tracker": "pose_anchor",
+  "anchor_match_radius": 1.6,
+  "pose_new_track_thresh": 0.3,
+  "count_anchor": "head with shoulder/box fallback; ROI and umbrella association use body box"
+}
