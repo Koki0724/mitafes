@@ -1,0 +1,146 @@
+{
+  "ltr": 3,
+  "rtl": 13,
+  "events": 16,
+  "umbrella_crossings": 2,
+  "umbrella_review_candidates": 1,
+  "rejected_observations": 1,
+  "live_states": {
+    "people": 3,
+    "umbrellas": 1,
+    "recent_events": 1,
+    "umbrella_links": 1
+  },
+  "pending_at_end": [],
+  "source": [
+    "../data/1300/ch1_20261106_130000-133423_vscode.mp4"
+  ],
+  "source_fps": 25.0,
+  "analysis_fps": 12.5,
+  "resumed": false,
+  "metrics_start_frame": 0,
+  "timing_scope": "This invocation only; event counts include restored history when resumed.",
+  "observations": 750,
+  "video_seconds": 60.0,
+  "processing_seconds": 10.817258498165756,
+  "expected_observations": 750,
+  "all_observations_processed": true,
+  "requested_duration_available": true,
+  "platform": "cuda",
+  "startup_seconds": 5.2867328599095345,
+  "total_seconds": 16.128379412926733,
+  "barrier_wait_seconds": 1.4719553291797638e-06,
+  "tensorrt_version": null,
+  "throughput_observations_fps": 69.33364864370901,
+  "realtime_factor": 5.546691891496721,
+  "inference_seconds": 8.52725967951119,
+  "tracking_seconds": 0.7012941143475473,
+  "latency_p50_seconds": 0.137,
+  "latency_p95_seconds": 0.197,
+  "latency_max_seconds": 0.277238376904279,
+  "max_inference_batch_seconds": 0.1894821198657155,
+  "paced": false,
+  "queue_capacity_batches": 2,
+  "queue_peak_capacity_frames": 16,
+  "model": "/home/ubuntu/slocal1/mitafes/cpu_counter/models/yolo11n.pt",
+  "imgsz": 1280,
+  "crop": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "device": "0",
+  "batch": 8,
+  "half": false,
+  "rect_letterbox": true,
+  "backend": "graph",
+  "flow_every": 1,
+  "flow_statistics": null,
+  "flow_policy": null,
+  "person_graph_precision": "FP32",
+  "vectorized_tracking": true,
+  "cpu_only": false,
+  "torch_cuda_build": "12.6",
+  "threads": 2,
+  "gpu_name": "Quadro P6000",
+  "gpu_count_used": 2,
+  "neural_worker_devices": [
+    "0",
+    "1"
+  ],
+  "inference_seconds_scope": "Sum of worker batch times; overlaps when multiple GPUs are used.",
+  "worker_mode": "thread",
+  "worker_gpu_stats": null,
+  "process_transport": null,
+  "cuda_visible_devices": null,
+  "person_shape": [
+    736,
+    1280
+  ],
+  "umbrella_shape": [
+    384,
+    640
+  ],
+  "parallel_models": true,
+  "decoder": "cv2",
+  "decode_width": 2880,
+  "decode_threads": 2,
+  "preview": null,
+  "encoder": null,
+  "peak_gpu_allocated_mb": 151.23291015625,
+  "gpu_memory_scope": "Torch allocator only; TensorRT, CUDA context, and separate codec processes are excluded. Live validation includes a total-device NVML snapshot.",
+  "startup_gpu_peak_mb": 9709.06982421875,
+  "final_gpu_allocated_mb": 146.220703125,
+  "final_gpu_reserved_mb": 812.0,
+  "mps_current_allocated_mb": null,
+  "mps_driver_allocated_mb": null,
+  "peak_process_rss_mb": 1887.2578125,
+  "latency_windows": {
+    "latency_basis": "decoded frame arrival",
+    "windows": [
+      {
+        "source_start_seconds": 0,
+        "observations": 125,
+        "latency_p50_seconds": 0.14242864586412907,
+        "latency_p95_seconds": 0.22322305664420128
+      },
+      {
+        "source_start_seconds": 10,
+        "observations": 125,
+        "latency_p50_seconds": 0.13667932339012623,
+        "latency_p95_seconds": 0.19376213839277626
+      },
+      {
+        "source_start_seconds": 20,
+        "observations": 125,
+        "latency_p50_seconds": 0.14228946575894952,
+        "latency_p95_seconds": 0.2087160407565534
+      },
+      {
+        "source_start_seconds": 30,
+        "observations": 125,
+        "latency_p50_seconds": 0.1414019321091473,
+        "latency_p95_seconds": 0.18378954660147429
+      },
+      {
+        "source_start_seconds": 40,
+        "observations": 125,
+        "latency_p50_seconds": 0.129905691370368,
+        "latency_p95_seconds": 0.174372985586524
+      },
+      {
+        "source_start_seconds": 50,
+        "observations": 125,
+        "latency_p50_seconds": 0.13352887285873294,
+        "latency_p95_seconds": 0.1850200045853853
+      }
+    ],
+    "last_minus_first_window_p95_seconds": null
+  },
+  "latency_histogram_resolution_seconds": 0.001,
+  "umbrella_model": "shared person detector",
+  "umbrella_device": "0",
+  "umbrella_every": 1,
+  "note": "Includes decode, inference, ordered tracking, persistence, logs, and optional preview drawing/encoding/flush. Model initialization reported separately. RTSP loss and full eight-hour stability remain unverified."
+}

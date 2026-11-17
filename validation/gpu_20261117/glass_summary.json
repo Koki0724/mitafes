@@ -1,0 +1,43 @@
+{
+  "ltr": 50,
+  "rtl": 12,
+  "events": 62,
+  "primary": "/home/ubuntu/slocal1/mitafes/integrated_counter/runs/final_release_60s/full",
+  "secondary": "/home/ubuntu/slocal1/mitafes/integrated_counter/runs/final_release_60s/roi",
+  "added": [],
+  "suppressed": 62,
+  "reconciliation": {
+    "method": "SQLite trajectory index",
+    "query_cache_limit": 128,
+    "sqlite_cache_mib": 8,
+    "index_bytes": 2011136,
+    "seconds": 0.3669427176937461
+  },
+  "source": [
+    "/home/ubuntu/slocal1/mitafes/data/1219/ch1_20261106_121900-124148_vscode.mp4"
+  ],
+  "mode": "video inference",
+  "elapsed_seconds": 55.63087151898071,
+  "stage_wall_seconds": {
+    "full": 34.326473894994706,
+    "roi": 20.818977306131274
+  },
+  "resumed": false,
+  "platform": "cuda",
+  "timing_scope": "This invocation only; counts include saved history",
+  "all_observations_processed": true,
+  "requested_duration_available": true,
+  "input_available_seconds": 1369.44,
+  "requested_max_seconds": 60.0,
+  "accuracy_status": "Accuracy must be evaluated separately for each source; see VALIDATION.md",
+  "profiles": {
+    "full": {
+      "robust_tracking": true,
+      "pose_new_track_thresh": 0.2,
+      "occlusion_crossings": true
+    },
+    "roi": {
+      "robust_tracking": true
+    }
+  }
+}

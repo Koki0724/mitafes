@@ -1,0 +1,41 @@
+test_late_birth_on_one_side_does_not_invent_crossing (test_accuracy.AccuracyTests.test_late_birth_on_one_side_does_not_invent_crossing) ... ok
+test_late_visible_person_requires_observations_on_both_sides (test_accuracy.AccuracyTests.test_late_visible_person_requires_observations_on_both_sides) ... ok
+test_near_camera_fast_motion_keeps_identity (test_accuracy.AccuracyTests.test_near_camera_fast_motion_keeps_identity) ... ok
+test_occluded_counter_checkpoint_preserves_pending_evidence (test_accuracy.AccuracyTests.test_occluded_counter_checkpoint_preserves_pending_evidence) ... ok
+test_passages_are_matched_by_space_and_direction (test_accuracy.AccuracyTests.test_passages_are_matched_by_space_and_direction) ... ok
+test_short_jitter_and_large_vertical_jump_do_not_count (test_accuracy.AccuracyTests.test_short_jitter_and_large_vertical_jump_do_not_count) ... ok
+test_reordering_preserves_all_62_events (test_inference_pool.PoolTests.test_reordering_preserves_all_62_events) ... ok
+test_worker_failure_is_propagated (test_inference_pool.PoolTests.test_worker_failure_is_propagated) ... ok
+test_existing_output_is_not_overwritten (test_integration.PipelineTests.test_existing_output_is_not_overwritten) ... ok
+test_incomplete_cached_observations_fail_before_publishing_results (test_integration.PipelineTests.test_incomplete_cached_observations_fail_before_publishing_results) ... ok
+test_failed_inference_rolls_back_and_resume_replays_only_uncommitted_frames (test_integration.ResumeTests.test_failed_inference_rolls_back_and_resume_replays_only_uncommitted_frames) ... ok
+test_resume_preserves_order_and_rejects_replaced_weights (test_integration.ResumeTests.test_resume_preserves_order_and_rejects_replaced_weights) ... ok
+test_cuda_is_preferred_when_available (test_integration.RuntimeTests.test_cuda_is_preferred_when_available) ... ok
+test_full_queue_can_be_cancelled (test_integration.RuntimeTests.test_full_queue_can_be_cancelled) ... ok
+test_latency_windows_exclude_previous_invocation (test_integration.RuntimeTests.test_latency_windows_exclude_previous_invocation) ... ok
+test_missing_recording_and_invalid_time_fail_before_inference (test_integration.RuntimeTests.test_missing_recording_and_invalid_time_fail_before_inference) ... ok
+test_models_and_inputs_have_distinct_resume_identities (test_integration.RuntimeTests.test_models_and_inputs_have_distinct_resume_identities) ... ok
+test_mps_adapter_preserves_shape_and_fp32 (test_integration.RuntimeTests.test_mps_adapter_preserves_shape_and_fp32) ... ok
+test_mps_unavailable_does_not_fall_back_to_cpu (test_integration.RuntimeTests.test_mps_unavailable_does_not_fall_back_to_cpu) ... ok
+test_reader_failure_is_not_reported_as_normal_eof (test_integration.RuntimeTests.test_reader_failure_is_not_reported_as_normal_eof) ... ok
+test_reader_seek_failure_reaches_consumer (test_integration.RuntimeTests.test_reader_seek_failure_reaches_consumer) ... ok
+test_rosetta_fails_before_allocating_tensors (test_integration.RuntimeTests.test_rosetta_fails_before_allocating_tensors) ... ok
+test_rss_units (test_integration.RuntimeTests.test_rss_units) ... ok
+test_truncated_and_uncommitted_logs_are_removed (test_integration.RuntimeTests.test_truncated_and_uncommitted_logs_are_removed) ... ok
+test_events_without_observations_are_rejected (test_reconciliation.IndexedMergeTests.test_events_without_observations_are_rejected) ... ok
+test_misaligned_stream_is_rejected_without_publishing_partial_outputs (test_reconciliation.IndexedMergeTests.test_misaligned_stream_is_rejected_without_publishing_partial_outputs) ... ok
+test_same_identity_and_distinct_companion_match_original_policy (test_reconciliation.IndexedMergeTests.test_same_identity_and_distinct_companion_match_original_policy) ... ok
+test_checkpoint_inside_bottom_crossing_preserves_all_events (test_streaming.StreamingTests.test_checkpoint_inside_bottom_crossing_preserves_all_events) ... ok
+test_checkpoint_restores_external_bytetrack_allocator (test_streaming.StreamingTests.test_checkpoint_restores_external_bytetrack_allocator) ... ok
+test_ended_states_retire_over_repeated_time_intervals (test_streaming.StreamingTests.test_ended_states_retire_over_repeated_time_intervals) ... ok
+test_file_boundary_preserves_global_stride_and_frame_order (test_streaming.StreamingTests.test_file_boundary_preserves_global_stride_and_frame_order) ... ok
+test_glass_matches_all_62_frozen_events (test_streaming.StreamingTests.test_glass_matches_all_62_frozen_events) ... ok
+test_overhead_events_and_both_umbrella_audits_match (test_streaming.StreamingTests.test_overhead_events_and_both_umbrella_audits_match) ... ok
+test_anchor_fallbacks_and_even_odd_medians (test_vectorized_tracker.VectorizedTrackerTests.test_anchor_fallbacks_and_even_odd_medians) ... ok
+test_close_tracks_with_duplicates_occlusions_and_empty_frames (test_vectorized_tracker.VectorizedTrackerTests.test_close_tracks_with_duplicates_occlusions_and_empty_frames) ... ok
+test_umbrella_assignments_and_ambiguity_rejections (test_vectorized_tracker.VectorizedTrackerTests.test_umbrella_assignments_and_ambiguity_rejections) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 5.225s
+
+OK

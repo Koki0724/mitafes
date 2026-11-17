@@ -1,0 +1,12 @@
+# develop-gpu の状態
+
+録画向けのCUDA / MPS統合版。ガラス側は `run_accuracy.py`、見下ろし側は `run.py --camera overhead` が入口です。
+
+- 元のMac版: `main`、取り込み元コミット `84f080f4dbb01c9247ea6dd7bfe8492a5af5aa7f`。
+- 実際のCUDA再推論: ガラス側60秒62/62、見下ろし側60秒16/16が既存の基準軌跡と一致。
+- 保存済み全編ログの照合結果: 606件、従来版とイベント・軌跡のハッシュが一致。
+- 既存の採点サンプル: 266/268、余計なカウント0。全編や本番の99%以上を確認した結果ではありません。
+- Mac実機での推論と8時間の連続運転は未検証。
+- push前に `python -m unittest discover -v` を実行し、36件が成功。記録は [tests.txt](../validation/gpu_20261117/tests.txt)。
+
+セットアップは [README](../README.md)、検証範囲・測定値は [VALIDATION](../VALIDATION.md) を参照してください。動画・重み・実行ログは含めていません。

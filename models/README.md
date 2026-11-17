@@ -1,29 +1,18 @@
 # モデル重み
 
-このフォルダに以下のUltralytics公式重みを配置する。重み自体はGitの管理対象外。
-
-プロジェクト直下で実行する：
+重みはGitの管理対象外です。プロジェクト直下で取得・検証します。
 
 ```sh
 python scripts/download_models.py
 python scripts/download_models.py --check
 ```
 
-取得元は [Ultralytics assets v8.3.0](https://github.com/ultralytics/assets/releases/tag/v8.3.0)。
-Python標準ライブラリだけでダウンロードでき、SHA-256が一致した場合だけ保存する。
-既存ファイルは検証のみ行い、不一致でも上書きしない。
+取得元は [Ultralytics assets v8.3.0](https://github.com/ultralytics/assets/releases/tag/v8.3.0)。固定したSHA-256を確認し、既存ファイルは上書きしません。
 
-| ファイル | 用途 | サイズ |
-|---|---|---:|
-| `yolo11m-pose.pt` | ガラス側の人物・姿勢推定 | 約42.5 MB |
-| `yolo11s.pt` | ガラス側の傘、見下ろし側の人物・傘 | 約19.3 MB |
+| ファイル | 用途 |
+|---|---|
+| `yolo11m-pose.pt` | ガラス側の人物・姿勢推定 |
+| `yolo11n.pt` | ガラス側の傘、見下ろし側の人物・傘 |
+| `yolo11s.pt` | 比較実験用。推奨プリセットでは使用しない |
 
-元の検証に使用した重みのSHA-256：
-
-```text
-29b17eaf3a3117cbea906090dbedf9159f7c6a49db58ec8b99ed2dfde1cf6eb2  yolo11m-pose.pt
-85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5  yolo11s.pt
-```
-
-ネット接続のない環境では、同じ重みをこのフォルダへコピーして `--check` で確認する。
-モデルの利用条件は配布元のライセンスを参照する。
+チェックサムは [download_models.py](../scripts/download_models.py) に固定しています。オフライン環境では同じ重みをこのフォルダーへコピーし、`--check` で検証してください。

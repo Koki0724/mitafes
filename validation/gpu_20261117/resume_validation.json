@@ -1,0 +1,18 @@
+{
+  "full": {
+    "observations": 800,
+    "unique_frames": 800,
+    "first_frame": 0,
+    "last_frame": 1598,
+    "injected_tails_removed": true,
+    "first_minute_events_unchanged": true
+  },
+  "roi": {
+    "observations": 800,
+    "unique_frames": 800,
+    "first_frame": 0,
+    "last_frame": 1598,
+    "injected_tails_removed": true,
+    "first_minute_events_unchanged": true
+  }
+}

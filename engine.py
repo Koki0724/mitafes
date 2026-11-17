@@ -13,9 +13,20 @@ class StreamingCounter:
     def __init__(self,profile,width,height,fps,stride):
         self.profile=profile;self.width=width;self.height=height;self.fps=fps;self.stride=stride
         self.pose_mode=profile.get('tracker')=='pose_anchor'
-        self.people_tracker=PoseAnchorTracker(fps,profile) if self.pose_mode else make_tracker(fps/stride,profile)
-        self.umbrella_tracker=make_tracker(fps/stride,profile,umbrella=True)
+        if self.pose_mode:
+            if profile.get('robust_tracking',False):
+                from robust_tracker import RobustPoseAnchorTracker
+                self.people_tracker=RobustPoseAnchorTracker(fps,profile,width,height)
+            else:
+                from vectorized_tracker import VectorizedPoseAnchorTracker
+                cls=VectorizedPoseAnchorTracker if profile.get('vectorized_tracking',True) else PoseAnchorTracker
+                self.people_tracker=cls(fps,profile)
+        else:self.people_tracker=make_tracker(fps/stride,profile)
+        self.umbrella_tracker=make_tracker(fps/(stride*profile.get('umbrella_every',1)),profile,umbrella=True)
         self.people_counter=TemporalCounter(profile,width,fps)
+        if profile.get('occlusion_crossings',False):
+            from occlusion_counter import OcclusionCounter
+            self.people_counter=OcclusionCounter(profile,width,fps)
         self.umbrella_counter=TemporalCounter(profile,width,fps)
         self.totals=Counter(ltr=0,rtl=0)
         self.umbrella_total=0;self.umbrella_review_total=0;self.rejected=0
@@ -27,16 +38,22 @@ class StreamingCounter:
         frame=item['index'];p=self.profile;w=self.width;h=self.height
         if frame<=self.last_frame:raise ValueError('Frames must arrive once, in source order')
         self.last_frame=frame
-        people_dets=[];points=[]
+        people_dets=[];points=[];head_flags=[]
+        head_only=set(item.get('head_only_indices',[]))
         for i,d in enumerate(item['detections']):
-            if int(d[5])!=0 or not inside(foot(d[:4]),p,w,h):continue
+            if int(d[5])!=0:continue
+            if i not in head_only and not inside(foot(d[:4]),p,w,h):continue
             if not person_quality(d[:4],p,w,h)[0]:self.rejected+=1;continue
             people_dets.append(d)
+            head_flags.append(i in head_only)
             if self.pose_mode:points.append(item['keypoints'][i])
         umbrella_dets=[d for d in item['detections'] if int(d[5])==25 and inside(umbrella_point(d[:4],p),p,w,h)]
-        people=self.people_tracker.update(people_dets,points,frame) if self.pose_mode else objects(self.people_tracker,people_dets,(h,w))
+        if self.pose_mode and p.get('robust_tracking',False):
+            people=self.people_tracker.update(people_dets,points,frame,head_flags=head_flags)
+        else:people=self.people_tracker.update(people_dets,points,frame) if self.pose_mode else objects(self.people_tracker,people_dets,(h,w))
         people=[x for x in people if person_quality(x['xyxy'],p,w,h)[0]]
-        umbrellas=objects(self.umbrella_tracker,umbrella_dets,(h,w))
+        # A scheduled skipped inference is not evidence that umbrellas vanished.
+        umbrellas=objects(self.umbrella_tracker,umbrella_dets,(h,w)) if item.get('umbrella_observed',True) else []
         for person in people:
             x,y=person.get('anchor',foot(person['xyxy']))
             self.people_counter.update(person['id'],x,y,frame)
@@ -51,7 +68,10 @@ class StreamingCounter:
         for event in self.umbrella_counter.events:
             self.umbrella_total+=1;event['event_id']=self.umbrella_total;self.pending_umbrellas.append(event)
         self.umbrella_counter.events.clear()
-        matches=associate_umbrellas(umbrellas,people,p)
+        if p.get('vectorized_tracking',True):
+            from vectorized_association import associate_umbrellas as associate
+        else:associate=associate_umbrellas
+        matches=associate(umbrellas,[x for x in people if not x.get('head_only',False)],p)
         for uid,pid,cost in matches:self.links[uid][pid]+=1
         audits=self.audit(frame/self.fps)
         # Ended track IDs cannot reconnect after the frozen tracker lifetime.
@@ -65,7 +85,9 @@ class StreamingCounter:
                     self.umbrella_last.pop(uid);self.links.pop(uid,None)
             while self.recent_people and self.recent_people[0]['seconds']<frame/self.fps-5:
                 self.recent_people.popleft()
-        return dict(frame=frame,people=people,umbrellas=umbrellas,matches=matches),events,audits
+        record=dict(frame=frame,people=people,umbrellas=umbrellas,matches=matches)
+        if 'person_observation_kind' in item:record['person_observation_kind']=item['person_observation_kind']
+        return record,events,audits
 
     def audit(self,seconds,final=False):
         result=[];tol=self.profile['umbrella_event_tolerance_seconds']
@@ -73,7 +95,9 @@ class StreamingCounter:
             event=self.pending_umbrellas.popleft()
             candidates={pid for pid,n in self.links[event['track_id']].items() if n>=2}
             covered=[e['event_id'] for e in self.recent_people if e['track_id'] in candidates and e['direction']==event['direction'] and abs(e['seconds']-event['seconds'])<=tol]
-            status='person_observed' if len(covered)==1 else 'needs_review'
+            # Sparse auxiliary inference can erase a competing owner's evidence.
+            # Keep its audit conservative instead of falsely resolving ambiguity.
+            status='person_observed' if len(covered)==1 and self.profile.get('umbrella_every',1)==1 else 'needs_review'
             if status=='needs_review':self.umbrella_review_total+=1
             result.append(dict(umbrella_event_id=event['event_id'],umbrella_track_id=event['track_id'],direction=event['direction'],seconds=event['seconds'],associated_person_event_ids=covered,status=status))
         return result

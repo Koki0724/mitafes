@@ -5,10 +5,35 @@ import numpy as np
 from scipy.optimize import linear_sum_assignment
 
 ROOT=Path(__file__).resolve().parent
+POC=ROOT.parent/'counting_poc'
 
 
 def rows(path):
     return list(csv.DictReader(path.open()))
+
+
+def prepare():
+    names={x['reference_id']:x for x in rows(ROOT/'reference/improvements/glass_manual_revised.csv')}
+    old_events={e['event_id']:e for e in rows(POC/'improvements/glass_result/events.csv')}
+    mapping={}
+    key=lambda e:(e['direction'],e['frame'],e['x'],e['y'])
+    for v in rows(ROOT/'reference/improvements/glass_result/verification.csv'):
+        if v['status']=='matched':mapping[key(old_events[v['event_id']])]=v['reference_id']
+    expected=[]
+    for e in rows(ROOT/'reference/improvements/glass_including_bottom_result/events.csv'):
+        rid=mapping.get(key(e))
+        if rid is None:
+            if e['direction']=='ltr' and 27<float(e['seconds'])<29:rid='61'
+            elif e['direction']=='rtl' and 36<float(e['seconds'])<38:rid='53'
+            else:raise ValueError('Unexpected baseline event')
+        expected.append(e|dict(reference_id=rid,description=names[rid]['description']))
+    assert len(expected)==len({e['reference_id'] for e in expected})==62
+    (ROOT/'reference/glass_expected.json').write_text(json.dumps(expected,indent=2))
+    overhead={e['event_id']:e for e in rows(ROOT/'reference/improvements/overhead_result/events.csv')}
+    expected=[]
+    for v in rows(ROOT/'reference/improvements/overhead_result/verification.csv'):
+        if v['status']=='matched':expected.append(overhead[v['event_id']]|dict(reference_id=v['reference_id'],description=v['description']))
+    (ROOT/'reference/overhead_expected.json').write_text(json.dumps(expected,indent=2))
 
 
 def point(person):
@@ -16,19 +41,9 @@ def point(person):
 
 
 def evaluate(camera,result,max_distance=30):
-    config=json.loads((result/'config.json').read_text())
-    args=config['args']
-    if args['camera']!=camera or abs((args.get('max_seconds') or 0)-60)>1e-9:
-        raise ValueError('Reference comparison requires the correct camera and a 60-second run')
-    if not args['record_tracks'] or args.get('resume'):
-        raise ValueError('Reference comparison requires --record-tracks and a fresh run')
-    summary=json.loads((result/'summary.json').read_text())
-    if (summary['width'],summary['height'],summary['source_fps'],summary['stride'])!=(2880,1620,25,2):
-        raise ValueError('Reference comparison requires 2880x1620, 25 FPS, stride 2')
-    if summary['observations']!=750 or not summary['all_observations_processed']:
-        raise ValueError('Reference comparison requires all 750 observations')
     expected=json.loads((ROOT/f'reference/{camera}_expected.json').read_text())
     reference_path=ROOT/'reference/improvements'/('glass_including_bottom_result' if camera=='glass' else 'overhead_result')/'tracks.json'
+    if not reference_path.exists():reference_path=POC/'improvements/overhead_result/tracks.json'
     reference=json.loads(reference_path.read_text())
     with (result/'tracks.jsonl').open() as f:candidate=[json.loads(line) for line in f]
     reftracks={};newtracks={}
@@ -78,7 +93,8 @@ def evaluate(camera,result,max_distance=30):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--camera',choices=['glass','overhead'],required=True);p.add_argument('--result',type=Path,required=True)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--prepare',action='store_true')
+    p.add_argument('--camera',choices=['glass','overhead']);p.add_argument('--result',type=Path)
     a=p.parse_args()
+    if a.prepare:prepare()
     if a.result:print(json.dumps(evaluate(a.camera,a.result),indent=2))

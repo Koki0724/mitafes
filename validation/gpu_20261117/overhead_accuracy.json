@@ -1,0 +1,12 @@
+{
+  "camera": "overhead",
+  "expected": 16,
+  "automatic": 16,
+  "matched_trajectories": 16,
+  "unmatched_references": [],
+  "unmatched_automatic_events": [],
+  "critical_cases": {},
+  "max_matching_anchor_error_px": 30,
+  "independent_test": false,
+  "method": "One-to-one assignment using shared-frame anchor trajectories; <=30px median, >=2 matching observations on BOTH sides. Totals alone do not pass."
+}

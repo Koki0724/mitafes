@@ -1,0 +1,566 @@
+{
+  "method": "Visual review of raw-source sheets without automatic boxes/counts; central 8 seconds of each 10-second window are scored, with 1-second boundary context on each side. Times are approximate line crossing times.",
+  "reviewer": "assistant visual inspection",
+  "independent_human_double_review": false,
+  "windows": [
+    {
+      "start": 90,
+      "score_start": 91,
+      "score_end": 99,
+      "ltr": 0,
+      "rtl": 2,
+      "events": [
+        [
+          92.1,
+          "rtl",
+          "dark foreground person with backpack"
+        ],
+        [
+          98.2,
+          "rtl",
+          "blue outerwear and blue backpack"
+        ]
+      ]
+    },
+    {
+      "start": 150,
+      "score_start": 151,
+      "score_end": 159,
+      "ltr": 8,
+      "rtl": 0,
+      "events": [
+        [
+          151.4,
+          "ltr",
+          "white top, looking at phone"
+        ],
+        [
+          152.8,
+          "ltr",
+          "dark foreground person"
+        ],
+        [
+          156.0,
+          "ltr",
+          "black hood, gray trousers, along glass"
+        ],
+        [
+          157.0,
+          "ltr",
+          "black top, behind cap wearer"
+        ],
+        [
+          157.3,
+          "ltr",
+          "cap, light jacket"
+        ],
+        [
+          158.2,
+          "ltr",
+          "blue uniform, front of three girls"
+        ],
+        [
+          158.25,
+          "ltr",
+          "long hair, white cardigan"
+        ],
+        [
+          158.3,
+          "ltr",
+          "rear girl in light top"
+        ]
+      ]
+    },
+    {
+      "start": 210,
+      "score_start": 211,
+      "score_end": 219,
+      "ltr": 1,
+      "rtl": 1,
+      "events": [
+        [
+          212.6,
+          "rtl",
+          "dark foreground woman"
+        ],
+        [
+          213.3,
+          "ltr",
+          "all-black middle-path person"
+        ]
+      ]
+    },
+    {
+      "start": 270,
+      "score_start": 271,
+      "score_end": 279,
+      "ltr": 4,
+      "rtl": 0,
+      "events": [
+        [
+          271.8,
+          "ltr",
+          "black top backpack"
+        ],
+        [
+          271.9,
+          "ltr",
+          "light top blue jeans"
+        ],
+        [
+          275.2,
+          "ltr",
+          "masked woman in dark outerwear"
+        ],
+        [
+          276.8,
+          "ltr",
+          "black suit carrying bag"
+        ]
+      ]
+    },
+    {
+      "start": 330,
+      "score_start": 331,
+      "score_end": 339,
+      "ltr": 5,
+      "rtl": 0,
+      "events": [
+        [
+          331.2,
+          "ltr",
+          "foreground woman with ponytail"
+        ],
+        [
+          331.5,
+          "ltr",
+          "black clothing, phone"
+        ],
+        [
+          334.7,
+          "ltr",
+          "light top along glass"
+        ],
+        [
+          337.6,
+          "ltr",
+          "front boy in dark top"
+        ],
+        [
+          337.6,
+          "ltr",
+          "rear boy in white top"
+        ]
+      ]
+    },
+    {
+      "start": 390,
+      "score_start": 391,
+      "score_end": 399,
+      "ltr": 1,
+      "rtl": 0,
+      "events": [
+        [
+          394.7,
+          "ltr",
+          "patterned dark shirt, pale trousers"
+        ]
+      ],
+      "boundary_context": [
+        [
+          390.95,
+          "ltr",
+          "black short skirt near left scoring boundary; do not score this ambiguous boundary event"
+        ]
+      ]
+    },
+    {
+      "start": 450,
+      "score_start": 451,
+      "score_end": 459,
+      "ltr": 1,
+      "rtl": 2,
+      "events": [
+        [
+          453.2,
+          "ltr",
+          "striped top, white bag"
+        ],
+        [
+          455.1,
+          "rtl",
+          "cap, striped top and instrument case"
+        ],
+        [
+          457.7,
+          "rtl",
+          "light jacket, blue jeans"
+        ]
+      ]
+    },
+    {
+      "start": 510,
+      "score_start": 511,
+      "score_end": 519,
+      "ltr": 5,
+      "rtl": 0,
+      "events": [
+        [
+          511.75,
+          "ltr",
+          "gray hood, middle path"
+        ],
+        [
+          512.1,
+          "ltr",
+          "navy jacket using phone"
+        ],
+        [
+          512.2,
+          "ltr",
+          "light pink top behind mustard jacket"
+        ],
+        [
+          512.3,
+          "ltr",
+          "mustard jacket, backpack"
+        ],
+        [
+          512.25,
+          "ltr",
+          "foreground woman in blue jeans"
+        ]
+      ]
+    },
+    {
+      "start": 570,
+      "score_start": 571,
+      "score_end": 579,
+      "ltr": 2,
+      "rtl": 2,
+      "events": [
+        [
+          573.85,
+          "rtl",
+          "pale shirt, shorts, backpack"
+        ],
+        [
+          574.4,
+          "ltr",
+          "foreground man, partly clipped at bottom"
+        ],
+        [
+          577.9,
+          "ltr",
+          "foreground woman, pale outerwear"
+        ],
+        [
+          578.4,
+          "rtl",
+          "white top boy"
+        ]
+      ]
+    },
+    {
+      "start": 630,
+      "score_start": 631,
+      "score_end": 639,
+      "ltr": 4,
+      "rtl": 0,
+      "events": [
+        [
+          632.8,
+          "ltr",
+          "tan top, white trousers"
+        ],
+        [
+          634.6,
+          "ltr",
+          "white top, black backpack along glass"
+        ],
+        [
+          634.6,
+          "ltr",
+          "navy top man in foreground"
+        ],
+        [
+          634.6,
+          "ltr",
+          "woman partly clipped at bottom"
+        ]
+      ]
+    },
+    {
+      "start": 690,
+      "score_start": 691,
+      "score_end": 699,
+      "ltr": 5,
+      "rtl": 0,
+      "events": [
+        [
+          692.4,
+          "ltr",
+          "rear woman in brown trousers along glass"
+        ],
+        [
+          692.5,
+          "ltr",
+          "front woman brown top, blue jeans"
+        ],
+        [
+          692.5,
+          "ltr",
+          "black jacket, backpack, phone"
+        ],
+        [
+          693.6,
+          "ltr",
+          "foreground dark T-shirt"
+        ],
+        [
+          693.75,
+          "ltr",
+          "black cap, backpack"
+        ]
+      ]
+    },
+    {
+      "start": 750,
+      "score_start": 751,
+      "score_end": 759,
+      "ltr": 0,
+      "rtl": 1,
+      "events": [
+        [
+          752.4,
+          "rtl",
+          "light gray cardigan, dark trousers"
+        ]
+      ]
+    },
+    {
+      "start": 810,
+      "score_start": 811,
+      "score_end": 819,
+      "ltr": 0,
+      "rtl": 0,
+      "events": []
+    },
+    {
+      "start": 870,
+      "score_start": 871,
+      "score_end": 879,
+      "ltr": 0,
+      "rtl": 2,
+      "events": [
+        [
+          875.2,
+          "rtl",
+          "ponytail, blue collar and tote"
+        ],
+        [
+          876.4,
+          "rtl",
+          "black top, gray trousers"
+        ]
+      ]
+    },
+    {
+      "start": 930,
+      "score_start": 931,
+      "score_end": 939,
+      "ltr": 0,
+      "rtl": 0,
+      "events": []
+    },
+    {
+      "start": 990,
+      "score_start": 991,
+      "score_end": 999,
+      "ltr": 1,
+      "rtl": 1,
+      "events": [
+        [
+          993.0,
+          "rtl",
+          "dark outerwear, gray tote"
+        ],
+        [
+          996.8,
+          "ltr",
+          "head and ponytail clipped at very bottom"
+        ]
+      ]
+    },
+    {
+      "start": 1050,
+      "score_start": 1051,
+      "score_end": 1059,
+      "ltr": 0,
+      "rtl": 0,
+      "events": []
+    },
+    {
+      "start": 1110,
+      "score_start": 1111,
+      "score_end": 1119,
+      "ltr": 2,
+      "rtl": 0,
+      "events": [
+        [
+          1114.0,
+          "ltr",
+          "foreground dark outerwear, red shirt"
+        ],
+        [
+          1118.05,
+          "ltr",
+          "green jacket along glass"
+        ]
+      ]
+    },
+    {
+      "start": 1170,
+      "score_start": 1171,
+      "score_end": 1179,
+      "ltr": 2,
+      "rtl": 0,
+      "events": [
+        [
+          1173.8,
+          "ltr",
+          "gray hair, gray jacket, backpack"
+        ],
+        [
+          1176.3,
+          "ltr",
+          "black top, beige trousers"
+        ]
+      ]
+    },
+    {
+      "start": 1230,
+      "score_start": 1231,
+      "score_end": 1239,
+      "ltr": 0,
+      "rtl": 1,
+      "events": [
+        [
+          1235.3,
+          "rtl",
+          "woman in gray patterned jacket, backpack"
+        ]
+      ]
+    },
+    {
+      "start": 1290,
+      "score_start": 1291,
+      "score_end": 1299,
+      "ltr": 6,
+      "rtl": 7,
+      "events": [
+        [
+          1292.65,
+          "rtl",
+          "foreground gray jacket, beige trousers"
+        ],
+        [
+          1292.8,
+          "rtl",
+          "companion in blue jacket"
+        ],
+        [
+          1293.3,
+          "rtl",
+          "middle-path black clothing"
+        ],
+        [
+          1293.6,
+          "ltr",
+          "first of four boys along glass"
+        ],
+        [
+          1293.8,
+          "ltr",
+          "second of four boys along glass"
+        ],
+        [
+          1294.0,
+          "ltr",
+          "third of four boys along glass"
+        ],
+        [
+          1294.25,
+          "ltr",
+          "fourth of four boys along glass"
+        ],
+        [
+          1294.35,
+          "rtl",
+          "blue checked outerwear"
+        ],
+        [
+          1294.5,
+          "rtl",
+          "light-haired companion in blue outerwear"
+        ],
+        [
+          1295.6,
+          "rtl",
+          "denim top, pale trousers, front woman"
+        ],
+        [
+          1296.7,
+          "ltr",
+          "black hoodie, dark trousers along glass"
+        ],
+        [
+          1297.3,
+          "rtl",
+          "foreground pale gray outerwear and tote"
+        ],
+        [
+          1298.0,
+          "ltr",
+          "white top, beige trousers, carrying bags"
+        ]
+      ],
+      "boundary_context": [
+        [
+          1298.99,
+          "rtl",
+          "first of two dark-clad women at right scoring boundary; excluded from score"
+        ]
+      ]
+    },
+    {
+      "start": 1350,
+      "score_start": 1351,
+      "score_end": 1359,
+      "ltr": 2,
+      "rtl": 2,
+      "events": [
+        [
+          1351.1,
+          "rtl",
+          "woman clipped at bottom, pale top"
+        ],
+        [
+          1352.2,
+          "rtl",
+          "white top boy, backpack"
+        ],
+        [
+          1353.15,
+          "ltr",
+          "taller companion in dark clothing"
+        ],
+        [
+          1353.3,
+          "ltr",
+          "shorter companion in navy top, pale jeans"
+        ]
+      ]
+    }
+  ]
+}

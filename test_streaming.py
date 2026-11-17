@@ -5,7 +5,7 @@ import cv2,numpy as np
 from engine import StreamingCounter,BaseTrack
 from run import produce
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent;POC=ROOT.parent/'counting_poc'
 
 
 def fixture(camera):
@@ -72,13 +72,24 @@ class StreamingTests(unittest.TestCase):
             args=SimpleNamespace(source=paths,max_seconds=None,pace=False,batch=2,stride=2)
             q=queue.Queue(2);stop=threading.Event()
             producer=threading.Thread(target=produce,args=(args,q,stop,dict(width=64,height=64,fps=25),time.perf_counter(),0));producer.start()
-            observed=[]
+            observed=[];images=[]
             while True:
                 batch=q.get(timeout=5)
                 if batch is None:break
                 if isinstance(batch,BaseException):raise batch
                 observed.extend(x['index'] for x in batch)
+                images.extend(x['image'] for x in batch)
             producer.join();self.assertEqual(observed,[0,2,4])
+            decoded=[]
+            for path in paths:
+                cap=cv2.VideoCapture(path)
+                while True:
+                    ok,image=cap.read()
+                    if not ok:break
+                    decoded.append(image)
+                cap.release()
+            for selected,expected in zip(images,decoded[::2]):
+                np.testing.assert_array_equal(selected,expected)
 
 
 if __name__=='__main__':unittest.main()

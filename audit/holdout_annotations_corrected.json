@@ -1,0 +1,924 @@
+{
+  "selection_plan": "holdout_raw/plan.json",
+  "reviewer": "assistant visual inspection",
+  "independent_human_double_review": false,
+  "model_results_seen_before_annotations": false,
+  "windows": [
+    {
+      "start": 105,
+      "score_start": 107,
+      "score_end": 123,
+      "ltr": 4,
+      "rtl": 1,
+      "events": [
+        [
+          107.1,
+          "ltr",
+          "black middle-path man"
+        ],
+        [
+          109.6,
+          "rtl",
+          "person clipped at lower edge"
+        ],
+        [
+          112.5,
+          "ltr",
+          "blue T-shirt and shorts"
+        ],
+        [
+          114.3,
+          "ltr",
+          "orange top backpack"
+        ],
+        [
+          118.5,
+          "ltr",
+          "dark clothing, phone along glass"
+        ]
+      ],
+      "raw_seconds": 20
+    },
+    {
+      "start": 165,
+      "score_start": 167,
+      "score_end": 183,
+      "ltr": 10,
+      "rtl": 5,
+      "events": [
+        [
+          168.4,
+          "ltr",
+          "blonde girl, pale top"
+        ],
+        [
+          168.5,
+          "ltr",
+          "dark-haired girl, pale top and blue jeans"
+        ],
+        [
+          169.1,
+          "ltr",
+          "pale-trousered boy along glass"
+        ],
+        [
+          169.2,
+          "ltr",
+          "foreground dark-clad person"
+        ],
+        [
+          172.7,
+          "ltr",
+          "tall white-shirted boy in group"
+        ],
+        [
+          172.85,
+          "ltr",
+          "navy cardigan boy in group"
+        ],
+        [
+          173.05,
+          "ltr",
+          "girl behind two boys"
+        ],
+        [
+          177.7,
+          "rtl",
+          "rear of two black-clad people along glass"
+        ],
+        [
+          177.8,
+          "rtl",
+          "front of two black-clad people"
+        ],
+        [
+          179.0,
+          "rtl",
+          "white-shirted boy"
+        ],
+        [
+          179.4,
+          "ltr",
+          "green jacket, jeans"
+        ],
+        [
+          181.35,
+          "rtl",
+          "black top, gray trousers"
+        ],
+        [
+          181.35,
+          "ltr",
+          "foreground black cap"
+        ],
+        [
+          182.6,
+          "rtl",
+          "woman long gray outerwear"
+        ],
+        [
+          182.85,
+          "ltr",
+          "foreground ponytail, blue jeans"
+        ]
+      ],
+      "raw_seconds": 20
+    },
+    {
+      "start": 225,
+      "score_start": 227,
+      "score_end": 243,
+      "ltr": 7,
+      "rtl": 0,
+      "events": [
+        [
+          230.0,
+          "ltr",
+          "brown top along glass"
+        ],
+        [
+          232.2,
+          "ltr",
+          "white top long hair, blue jeans"
+        ],
+        [
+          232.4,
+          "ltr",
+          "light top short brown hair, dark skirt"
+        ],
+        [
+          232.55,
+          "ltr",
+          "navy top beside two women"
+        ],
+        [
+          232.7,
+          "ltr",
+          "beige coat along glass"
+        ],
+        [
+          236.0,
+          "ltr",
+          "rear long-haired woman, light coat"
+        ],
+        [
+          236.2,
+          "ltr",
+          "front dark-haired woman, light cardigan"
+        ]
+      ],
+      "raw_seconds": 20
+    },
+    {
+      "start": 285,
+      "score_start": 287,
+      "score_end": 303,
+      "ltr": 4,
+      "rtl": 2,
+      "events": [
+        [
+          292.1,
+          "ltr",
+          "black uniform boy"
+        ],
+        [
+          296.1,
+          "rtl",
+          "foreground white shirt backpack"
+        ],
+        [
+          297.05,
+          "ltr",
+          "rear dark jacket boy"
+        ],
+        [
+          297.2,
+          "ltr",
+          "front gray hoodie boy"
+        ],
+        [
+          300.75,
+          "rtl",
+          "olive jacket jeans backpack"
+        ],
+        [
+          301.05,
+          "ltr",
+          "navy jacket gray trousers"
+        ]
+      ],
+      "raw_seconds": 20
+    },
+    {
+      "start": 345,
+      "score_start": 347,
+      "score_end": 363,
+      "ltr": 7,
+      "rtl": 0,
+      "events": [
+        [
+          355.0,
+          "ltr",
+          "pale blue shirt carrying bags along glass"
+        ],
+        [
+          355.5,
+          "ltr",
+          "woman in gray jacket along glass"
+        ],
+        [
+          355.0,
+          "ltr",
+          "foreground dark green top backpack"
+        ],
+        [
+          356.9,
+          "ltr",
+          "all-black boy middle path"
+        ],
+        [
+          357.3,
+          "ltr",
+          "navy jacket pale shorts"
+        ],
+        [
+          357.7,
+          "ltr",
+          "foreground black top backpack"
+        ],
+        [
+          361.3,
+          "ltr",
+          "bald man navy sweater"
+        ]
+      ],
+      "raw_seconds": 20
+    },
+    {
+      "start": 405,
+      "score_start": 407,
+      "score_end": 423,
+      "ltr": 8,
+      "rtl": 1,
+      "events": [
+        [
+          413.4,
+          "ltr",
+          "foreground long dark hair"
+        ],
+        [
+          415.3,
+          "ltr",
+          "black cap man near glass"
+        ],
+        [
+          415.8,
+          "ltr",
+          "white T-shirt man along glass"
+        ],
+        [
+          416.1,
+          "ltr",
+          "foreground gray hood woman"
+        ],
+        [
+          416.6,
+          "rtl",
+          "navy vest and pale sleeves"
+        ],
+        [
+          418.65,
+          "ltr",
+          "white shirt backpack boy along glass"
+        ],
+        [
+          418.65,
+          "ltr",
+          "foreground green top"
+        ],
+        [
+          419.0,
+          "ltr",
+          "foreground dark top companion"
+        ],
+        [
+          422.2,
+          "ltr",
+          "dark top, white tote"
+        ]
+      ],
+      "raw_seconds": 20
+    },
+    {
+      "start": 465,
+      "score_start": 467,
+      "score_end": 483,
+      "ltr": 7,
+      "rtl": 1,
+      "events": [
+        [
+          467.05,
+          "ltr",
+          "woman in black along glass"
+        ],
+        [
+          471.7,
+          "ltr",
+          "cap and black hoodie"
+        ],
+        [
+          472.1,
+          "ltr",
+          "navy suit boy beside cap wearer"
+        ],
+        [
+          473.8,
+          "ltr",
+          "dark jacket, khaki trousers"
+        ],
+        [
+          473.95,
+          "rtl",
+          "foreground white cap"
+        ],
+        [
+          478.1,
+          "ltr",
+          "rear dark-haired person, pale top"
+        ],
+        [
+          478.25,
+          "ltr",
+          "front curly-haired person, beige top"
+        ],
+        [
+          481.1,
+          "ltr",
+          "white shirt, backpack along glass"
+        ]
+      ],
+      "raw_seconds": 20
+    },
+    {
+      "start": 525,
+      "score_start": 527,
+      "score_end": 543,
+      "raw_seconds": 20,
+      "ltr": 6,
+      "rtl": 1,
+      "events": [
+        [
+          537.55,
+          "rtl",
+          "white shirt briefcase along glass"
+        ],
+        [
+          537.55,
+          "ltr",
+          "black hoodie white trousers"
+        ],
+        [
+          537.8,
+          "ltr",
+          "navy vest pale sleeves"
+        ],
+        [
+          537.75,
+          "ltr",
+          "near-glass boy in black"
+        ],
+        [
+          537.9,
+          "ltr",
+          "rear brown-haired boy in black"
+        ],
+        [
+          540.3,
+          "ltr",
+          "foreground girl dark coat blue jeans"
+        ],
+        [
+          542.85,
+          "ltr",
+          "foreground girl gray hood"
+        ]
+      ]
+    },
+    {
+      "start": 585,
+      "score_start": 587,
+      "score_end": 603,
+      "raw_seconds": 20,
+      "ltr": 7,
+      "rtl": 7,
+      "events": [
+        [
+          588.3,
+          "ltr",
+          "white shirt and shopping bags"
+        ],
+        [
+          589,
+          "rtl",
+          "green backpack along glass"
+        ],
+        [
+          589.7,
+          "ltr",
+          "white shirt boy in front"
+        ],
+        [
+          589.9,
+          "ltr",
+          "gray patterned shirt boy"
+        ],
+        [
+          589.95,
+          "ltr",
+          "rear black shirt boy"
+        ],
+        [
+          591.9,
+          "ltr",
+          "black shirt along glass"
+        ],
+        [
+          594.05,
+          "rtl",
+          "black cap checkered shirt"
+        ],
+        [
+          594.5,
+          "ltr",
+          "foreground pale shirt on phone"
+        ],
+        [
+          597.85,
+          "rtl",
+          "curly-haired boy purple top"
+        ],
+        [
+          597.9,
+          "rtl",
+          "light-haired boy green backpack"
+        ],
+        [
+          600,
+          "rtl",
+          "black cap blue top boy"
+        ],
+        [
+          600.05,
+          "rtl",
+          "dark-haired boy black top"
+        ],
+        [
+          602.15,
+          "rtl",
+          "green shirt backpack"
+        ],
+        [
+          602.9,
+          "ltr",
+          "striped shirt woman on phone"
+        ]
+      ]
+    },
+    {
+      "start": 645,
+      "score_start": 647,
+      "score_end": 663,
+      "raw_seconds": 20,
+      "ltr": 1,
+      "rtl": 3,
+      "events": [
+        [
+          647.4,
+          "rtl",
+          "pale jacket backpack"
+        ],
+        [
+          658.25,
+          "rtl",
+          "gray hoodie backpack"
+        ],
+        [
+          662.05,
+          "ltr",
+          "black jacket white trousers along glass"
+        ],
+        [
+          662.95,
+          "rtl",
+          "foreground black cap"
+        ]
+      ]
+    },
+    {
+      "start": 705,
+      "score_start": 707,
+      "score_end": 723,
+      "raw_seconds": 20,
+      "ltr": 5,
+      "rtl": 2,
+      "events": [
+        [
+          709.3,
+          "ltr",
+          "dark suit boy in front"
+        ],
+        [
+          709.35,
+          "ltr",
+          "navy jacket white trousers"
+        ],
+        [
+          711.75,
+          "rtl",
+          "foreground white shirt"
+        ],
+        [
+          714.2,
+          "rtl",
+          "foreground black top pale trousers"
+        ],
+        [
+          720.05,
+          "ltr",
+          "front black hoodie white trousers"
+        ],
+        [
+          720.25,
+          "ltr",
+          "navy blazer boy"
+        ],
+        [
+          720.25,
+          "ltr",
+          "white shirt boy behind blazer"
+        ]
+      ]
+    },
+    {
+      "start": 765,
+      "score_start": 767,
+      "score_end": 783,
+      "raw_seconds": 20,
+      "ltr": 2,
+      "rtl": 3,
+      "events": [
+        [
+          768.65,
+          "rtl",
+          "black hoodie pale blue jeans"
+        ],
+        [
+          769.4,
+          "ltr",
+          "woman white top black trousers"
+        ],
+        [
+          777,
+          "rtl",
+          "foreground white shirt backpack"
+        ],
+        [
+          780.9,
+          "ltr",
+          "black top blue jeans phone"
+        ],
+        [
+          781.85,
+          "rtl",
+          "black clothing backpack yellow charm"
+        ]
+      ]
+    },
+    {
+      "start": 825,
+      "score_start": 827,
+      "score_end": 843,
+      "raw_seconds": 20,
+      "ltr": 3,
+      "rtl": 0,
+      "events": [
+        [
+          842.75,
+          "ltr",
+          "black cap khaki trousers"
+        ],
+        [
+          842.9,
+          "ltr",
+          "white T-shirt middle group"
+        ],
+        [
+          842.98,
+          "ltr",
+          "navy top foreground group"
+        ]
+      ]
+    },
+    {
+      "start": 885,
+      "score_start": 887,
+      "score_end": 903,
+      "raw_seconds": 20,
+      "ltr": 1,
+      "rtl": 5,
+      "events": [
+        [
+          887.05,
+          "rtl",
+          "bottom woman glasses white collar"
+        ],
+        [
+          890.9,
+          "rtl",
+          "black shirt along glass"
+        ],
+        [
+          891.8,
+          "rtl",
+          "foreground black shirt backpack"
+        ],
+        [
+          900.65,
+          "ltr",
+          "black suit man hand at forehead"
+        ],
+        [
+          902.05,
+          "rtl",
+          "woman pale top pale blue jeans"
+        ],
+        [
+          902.6,
+          "rtl",
+          "older woman blue shirt tote"
+        ]
+      ]
+    },
+    {
+      "start": 945,
+      "score_start": 947,
+      "score_end": 963,
+      "raw_seconds": 20,
+      "ltr": 1,
+      "rtl": 2,
+      "events": [
+        [
+          948.2,
+          "ltr",
+          "woman navy cardigan white trousers"
+        ],
+        [
+          962.45,
+          "rtl",
+          "foreground blue uniform cap"
+        ],
+        [
+          962.98,
+          "rtl",
+          "green top backpack along glass"
+        ]
+      ]
+    },
+    {
+      "start": 1005,
+      "score_start": 1007,
+      "score_end": 1023,
+      "raw_seconds": 20,
+      "ltr": 0,
+      "rtl": 5,
+      "events": [
+        [
+          1007.3,
+          "rtl",
+          "foreground dark puffer pale trousers"
+        ],
+        [
+          1010.25,
+          "rtl",
+          "black cap pale sleeves backpack"
+        ],
+        [
+          1012.8,
+          "rtl",
+          "white jacket black trousers backpack"
+        ],
+        [
+          1015.05,
+          "rtl",
+          "gray hoodie blue jeans"
+        ],
+        [
+          1016.25,
+          "rtl",
+          "black cap black jacket white trousers"
+        ]
+      ]
+    },
+    {
+      "start": 1065,
+      "score_start": 1067,
+      "score_end": 1083,
+      "raw_seconds": 20,
+      "ltr": 3,
+      "rtl": 1,
+      "events": [
+        [
+          1068.05,
+          "ltr",
+          "black top blue jeans along glass"
+        ],
+        [
+          1067.9,
+          "rtl",
+          "foreground black cap green backpack"
+        ],
+        [
+          1073.2,
+          "ltr",
+          "pale top boy holding paper"
+        ],
+        [
+          1073.3,
+          "ltr",
+          "dark-haired companion pale top behind paper boy"
+        ]
+      ]
+    },
+    {
+      "start": 1125,
+      "score_start": 1127,
+      "score_end": 1143,
+      "raw_seconds": 20,
+      "ltr": 3,
+      "rtl": 2,
+      "events": [
+        [
+          1133.7,
+          "rtl",
+          "black clothing along glass"
+        ],
+        [
+          1138.1,
+          "ltr",
+          "white shirt holding leaflet"
+        ],
+        [
+          1138.75,
+          "ltr",
+          "foreground black clothing"
+        ],
+        [
+          1140.05,
+          "ltr",
+          "check shirt backpack"
+        ],
+        [
+          1140.55,
+          "rtl",
+          "striped shirt woman"
+        ]
+      ]
+    },
+    {
+      "start": 1185,
+      "score_start": 1187,
+      "score_end": 1203,
+      "raw_seconds": 20,
+      "ltr": 2,
+      "rtl": 4,
+      "events": [
+        [
+          1187.35,
+          "rtl",
+          "bottom man glasses dark clothing"
+        ],
+        [
+          1196.5,
+          "rtl",
+          "beige shirt man"
+        ],
+        [
+          1197.1,
+          "rtl",
+          "masked woman pale top"
+        ],
+        [
+          1197.2,
+          "rtl",
+          "older woman green jacket backpack"
+        ],
+        [
+          1198,
+          "ltr",
+          "black top orange shoulder bag along glass"
+        ],
+        [
+          1200.9,
+          "ltr",
+          "black shirt blue jeans"
+        ]
+      ]
+    },
+    {
+      "start": 1245,
+      "score_start": 1247,
+      "score_end": 1263,
+      "raw_seconds": 20,
+      "ltr": 0,
+      "rtl": 2,
+      "events": [
+        [
+          1261.75,
+          "rtl",
+          "foreground turquoise top hair bun"
+        ],
+        [
+          1262.05,
+          "rtl",
+          "bottom pale printed top backpack"
+        ]
+      ]
+    },
+    {
+      "start": 1305,
+      "score_start": 1307,
+      "score_end": 1323,
+      "raw_seconds": 20,
+      "ltr": 2,
+      "rtl": 6,
+      "events": [
+        [
+          1308.7,
+          "rtl",
+          "foreground black top pale jeans"
+        ],
+        [
+          1311.35,
+          "rtl",
+          "white blouse woman ponytail"
+        ],
+        [
+          1313.65,
+          "rtl",
+          "bottom black cap"
+        ],
+        [
+          1317,
+          "ltr",
+          "beige cap older man"
+        ],
+        [
+          1318,
+          "rtl",
+          "black top pale trousers white bag"
+        ],
+        [
+          1319.55,
+          "rtl",
+          "foreground cap long hair pale jacket"
+        ],
+        [
+          1321.8,
+          "rtl",
+          "bottom dark-haired woman"
+        ],
+        [
+          1322.55,
+          "ltr",
+          "gray jacket man with briefcase"
+        ]
+      ],
+      "boundary_context": [
+        [
+          1306.95,
+          "rtl",
+          "blue hoodie along glass, boundary crossing before 1307"
+        ]
+      ]
+    }
+  ],
+  "annotation_revision": {
+    "corrected_at": "2026-11-17T04:14:06.327024+00:00",
+    "original_file": "audit/holdout_annotations.json",
+    "original_sha256": "0816e20cf4e1a44d0f70a5ee614c47b6f732271e68f7c932ad65678e341f19cb",
+    "removed_annotation": [
+      1311.45,
+      "rtl",
+      "dark top woman beside white blouse"
+    ],
+    "reason": "Raw native-resolution temporal review shows ONE woman in a white blouse holding a dark coat and a white handbag. The dark clothing was incorrectly annotated as a second person. The original annotation is preserved unchanged.",
+    "evidence": [
+      "runs/final_full_cached/remaining_miss_raw.jpg",
+      "runs/final_full_cached/raw_review_1311.jpg"
+    ],
+    "remaining_actual_miss": "1073.3 second companion; two people visibly separate before and after overlap, see raw_review_1073.jpg",
+    "algorithm_or_event_correction": false
+  },
+  "model_results_seen_before_initial_annotations": false,
+  "correction_performed_after_model_results": true
+}

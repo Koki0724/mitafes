@@ -1,4 +1,4 @@
-"""Download the two pinned YOLO11 weights, or verify existing files."""
+"""Download the pinned YOLO11 weights, or verify existing files."""
 
 import argparse
 import hashlib
@@ -9,6 +9,7 @@ import urllib.request
 
 
 MODELS = {
+    "yolo11n.pt": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
     "yolo11m-pose.pt": "29b17eaf3a3117cbea906090dbedf9159f7c6a49db58ec8b99ed2dfde1cf6eb2",
     "yolo11s.pt": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
 }

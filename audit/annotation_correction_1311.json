@@ -1,0 +1,17 @@
+{
+  "corrected_at": "2026-11-17T04:14:06.327024+00:00",
+  "original_file": "audit/holdout_annotations.json",
+  "original_sha256": "0816e20cf4e1a44d0f70a5ee614c47b6f732271e68f7c932ad65678e341f19cb",
+  "removed_annotation": [
+    1311.45,
+    "rtl",
+    "dark top woman beside white blouse"
+  ],
+  "reason": "Raw native-resolution temporal review shows ONE woman in a white blouse holding a dark coat and a white handbag. The dark clothing was incorrectly annotated as a second person. The original annotation is preserved unchanged.",
+  "evidence": [
+    "runs/final_full_cached/remaining_miss_raw.jpg",
+    "runs/final_full_cached/raw_review_1311.jpg"
+  ],
+  "remaining_actual_miss": "1073.3 second companion; two people visibly separate before and after overlap, see raw_review_1073.jpg",
+  "algorithm_or_event_correction": false
+}
