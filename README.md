@@ -52,6 +52,31 @@ python run.py \
 
 670秒は元の基準区間の開始位置です。別動画の先頭なら `--start-seconds 0` にします。
 
+## ガラス側を1パスで高速に処理（`run_fused.py`）
+
+`run_accuracy.py` と同じ2入力（全画面・x=40〜80%の切り抜き）、同じモデル・入力形状・閾値・追跡・照合で、録画を1回だけデコードします。傘モデルは両入力で同一の全画面推論だったため1回にまとめ、3つのネットワークを別々のCUDAストリームで重ねて実行します。CUDAのFP32のみで、`--resume` には未対応です。
+
+```sh
+python run_fused.py --source /path/to/glass.mp4 --output runs/my_glass_fused
+```
+
+結果は `run_accuracy.py` と同じく `full/`・`roi/`・`result/` に出力します。22分49秒の録画（RTX 3080 Ti、250W制限）で686.7秒→403秒になり、照合後の通過603件の向き・フレーム・時刻が完全に一致しました。詳細は [VALIDATION.md](VALIDATION.md) を参照してください。
+
+## カメラからのリアルタイム処理（`live_fused.py`）
+
+RTSPカメラ（またはNVR）の映像を、`run_fused.py` と同じ推論・追跡に流し、2入力の照合も `stream_merge.py` で逐次に行います。照合の条件は `merge_indexed.py` と同じで、判定に必要な前後のフレームがそろう約7秒後に roi 側の通過を確定します。保持するのは直近約18秒分だけです。
+
+```sh
+# URLは ~/.mitafes_rtsp（chmod 600）から読みます。ログやoutputには認証情報を出しません。
+echo 'rtsp://USER:PASS@NVR_IP:554/live/1/1/avm' > ~/.mitafes_rtsp && chmod 600 ~/.mitafes_rtsp
+python live_fused.py --duration 600 --output runs/live_10min
+
+# 録画を25fpsの実時間で流す仮想カメラ
+python live_fused.py --file /path/to/glass.mp4 --duration 1400 --output runs/live_virtual
+```
+
+TP-Link VIGI NVRのライブ映像は `rtsp://IP:554/live/<チャンネル>/<1=メイン|2=サブ>/avm` です。入力は2880×1620 / 25fpsのみ受け付けます。処理が約2.6秒分以上遅れると、遅延が際限なく伸びないよう8観測単位で破棄し `dropped_frames` に数えます。切断時は再接続し、時間軸を経過時間ぶん進めます。10秒ごとの受信fps・遅延・破棄数・GPU電力を `live_status.jsonl` に記録し、終了時に逐次照合とオフライン照合の通過数を比較します。
+
 ## Apple Siliconで実行
 
 MPSのコード経路を実装しましたが、**この統合版をMac実機で推論した速度・精度は未検証**です。以下は実機検証用の手順です。
